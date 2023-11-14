@@ -1,0 +1,15 @@
+main {
+    display: flex;
+  }
+article {
+      flex: 1 1 50%;
+      order: 2;
+  }
+#news {
+      flex: 1 1 25%;
+      order: 3;
+  }
+#contact {
+      flex: 1 1 25%;
+      order: 1;
+  }

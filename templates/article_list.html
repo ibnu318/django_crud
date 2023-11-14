@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% for post in object_list %}
+<div class='container' style='margin-top:20px;'>
+<div class="card" style="width: 28rem;">
+  <p>{{ post.date }}</p>
+  <img src="{{ post.cover.url}}" alt="{{ post.title }}">
+  <div class="card-body">
+    <h5>{{ post.title }}</h5>
+    <p>By: {{ post.author }}</p>
+    <p>{{ post.body|safe }}</p>
+    <a href="{% url 'article_detail' post.id %}" class="btn btn-primary">Selengkapnya...</a>
+  </div>
+</div>
+</div>
+{% endfor %}
+
+{% include "pagination.html" %}
+
+{% endblock content %}
